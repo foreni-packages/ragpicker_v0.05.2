@@ -1,0 +1,9 @@
+[Core]
+Name = bitDefender
+Module = bitDefender
+   
+[Documentation]
+Description = BitDefender AntiVirus Scan
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

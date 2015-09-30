@@ -1,0 +1,9 @@
+[Core]
+Name = cuckooSandbox
+Module = cuckooSandbox
+   
+[Documentation]
+Description = Adds the Sample to the list of pending tasks to be processed and analyzed.
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

@@ -1,0 +1,9 @@
+[Core]
+Name = reporthtml
+Module = reporthtml
+   
+[Documentation]
+Description = HTML Reporting-Modul
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

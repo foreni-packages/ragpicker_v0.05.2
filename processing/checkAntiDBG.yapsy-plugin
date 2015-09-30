@@ -1,0 +1,9 @@
+[Core]
+Name = checkAntiDBG
+Module = checkAntiDBG
+   
+[Documentation]
+Description = Check for suspicious API Anti Debug 
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

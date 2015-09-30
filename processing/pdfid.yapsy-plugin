@@ -1,0 +1,9 @@
+[Core]
+Name = pdfid
+Module = pdfid
+   
+[Documentation]
+Description = PDF identify and informations
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

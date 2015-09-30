@@ -1,0 +1,9 @@
+[Core]
+Name = checkAntiVM
+Module = checkAntiVM
+   
+[Documentation]
+Description = Check for Anti VM Tricks
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

@@ -1,0 +1,9 @@
+[Core]
+Name = info
+Module = info
+   
+[Documentation]
+Description = Base Infos 
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

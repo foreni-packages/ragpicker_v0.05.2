@@ -1,0 +1,9 @@
+[Core]
+Name = getOwnLocation
+Module = getOwnLocation
+   
+[Documentation]
+Description = returns the own internet location
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

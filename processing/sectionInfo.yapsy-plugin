@@ -1,0 +1,9 @@
+[Core]
+Name = sectionInfo
+Module = sectionInfo
+   
+[Documentation]
+Description = Returns the PE Sections Informations
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

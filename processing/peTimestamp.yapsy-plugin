@@ -1,0 +1,9 @@
+[Core]
+Name = peTimestamp
+Module = peTimestamp
+   
+[Documentation]
+Description = 
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

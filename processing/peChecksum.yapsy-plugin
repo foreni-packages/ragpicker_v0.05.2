@@ -1,0 +1,9 @@
+[Core]
+Name = peChecksum
+Module = peChecksum
+   
+[Documentation]
+Description = 
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

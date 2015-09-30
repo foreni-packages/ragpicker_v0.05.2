@@ -1,0 +1,9 @@
+[Core]
+Name = jsondump
+Module = jsondump
+   
+[Documentation]
+Description = Saves analysis results in JSON format
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

@@ -1,0 +1,9 @@
+[Core]
+Name = secuboxlabs
+Module = secuboxlabs
+   
+[Documentation]
+Description = Fetching Malware-URLs from secuboxlabs.fr RSS
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

@@ -1,0 +1,9 @@
+[Core]
+Name = virustotal
+Module = virustotal
+   
+[Documentation]
+Description = Gets antivirus signatures from VirusTotal.com
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

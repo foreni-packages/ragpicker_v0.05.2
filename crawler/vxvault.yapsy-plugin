@@ -1,0 +1,9 @@
+[Core]
+Name = vxvault
+Module = vxvault
+   
+[Documentation]
+Description = Fetching Malware-URLs from VXVault
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

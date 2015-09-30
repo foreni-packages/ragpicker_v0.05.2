@@ -1,0 +1,9 @@
+[Core]
+Name = filedump
+Module = filedump
+   
+[Documentation]
+Description = Save downloaded file on the file system
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

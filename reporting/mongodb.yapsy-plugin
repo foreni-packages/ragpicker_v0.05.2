@@ -1,0 +1,9 @@
+[Core]
+Name = mongodb
+Module = mongodb
+   
+[Documentation]
+Description = Reporting-Modul for MongoDB
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

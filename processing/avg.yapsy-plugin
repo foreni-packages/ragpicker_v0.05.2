@@ -1,0 +1,9 @@
+[Core]
+Name = avg
+Module = avg
+   
+[Documentation]
+Description = Avg AntiVirus Scan
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

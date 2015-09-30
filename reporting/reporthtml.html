@@ -1,0 +1,1125 @@
+<!--
+   _ __   __ _   __ _  _ __  (_)  ___ | | __  ___  _ __ 
+  | '__| / _` | / _` || '_ \ | | / __|| |/ / / _ \| '__|
+  | |   | (_| || (_| || |_) || || (__ |   < |  __/| |   
+  |_|    \__,_| \__, || .__/ |_| \___||_|\_\ \___||_|   
+                |___/ |_|                               
+                
+  Copyright (C) 2013 Ragpicker Developers.
+  This file is part of Ragpicker Malware Crawler - http://code.google.com/p/malware-crawler/
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Ragpicker - Report</title>
+<style>
+body {
+    margin: 0;
+    background: #d1d1d1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAADwCAIAAACljiJhAAAABGdBTUEAALGPC/xhBQAAAAd0SU1FB9oJHhUzHtYu7vwAAAH9SURBVDhP5c/bQuJAEITh2vd/OlBAIJzCmRAQQgQEcf/qoLh7t9dbk+mva/SGX5+fnyLg7b/lxm+/8etvYt5oN+IW+eLj48ZRTIh8cb1SrgIOOH9xuVz5dHHuXHR555h3FnkEDpyNh9v5zBacz4oJp+B0Op9OJ5pDI8cKt+PxeNLRHOXxBm8+YPXmVPBoyqAsS5WlF3C+OZSHaAcWcYOIKQ6FCkZhnB/s94X2xb4o9obI48Fuv+MTE+W5233z+lq1VxY/orYMiLmtGkR+sNlutCHBdrupmsnv5GzKc1dg5m7rfK18zVxr7eTyzmNGyXgMlRH+hcGJlmVaVWSr1Spb0awYwRKWYLXE5VIewcJ4LIAsF1raheYVMedazOc8+JFF3Plsrpk1s5lbCI6mjOlU3NmUFgG6mU7MZMInD9okYsZjM+YTa8DbeKzU048kDVIeU2YK6SgNiFipSkcOrWI0DIaj4XAIQxYx3WIOzAAGzrDi3qBftf6g3+/zN2ZfHg96/R6fehFRTK+XJElPyR1KksgFYkI34VM36RJ5JBWdBx1KVx3odMBRpx20sX2nrXbkD1704rS/aEV1a7Va4rq1XKIFTc43zao1I2o0GqbZZGnIu4mo8Uwa4nLEJbQHT3p6euaIywYIEVMHLgvUier12g+812qqkXrFvf0LvwHWNSZ/iM2C+AAAAABJRU5ErkJggg==) repeat-x;
+    font-family: Verdana, Tahoma, Serif;
+    font-size: 12px;
+    text-align: center;
+}
+#container {
+    width: 90%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background: white;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+}
+#header {
+    position: absolute;
+    top: 1px;
+    margin-left: 10px;
+}
+#menu {
+    background-image: linear-gradient(bottom, rgb(27,78,97) 15%, rgb(37,129,162) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(27,78,97) 15%, rgb(37,129,162) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(27,78,97) 15%, rgb(37,129,162) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(27,78,97) 15%, rgb(37,129,162) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(27,78,97) 15%, rgb(37,129,162) 100%);
+    
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.15, rgb(27,78,97)),
+        color-stop(1, rgb(37,129,162))
+    );
+    
+    margin: 0;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+}
+#menu ul {
+    list-style-type: none;
+}
+#menu li {
+    float: right;
+    margin-right: 10px;
+}
+#menu a:link, #menu a:visited {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    display: block;
+}
+#menu a:hover {
+    text-decoration: none;
+    background: #2580a2;
+}
+#content {
+    padding: 20px;
+}
+#footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Links */
+a:link, a:visited {
+    color: #2580a2;   
+}
+a:hover {
+    color: black;
+}
+
+/* Styles */
+div.space {
+    margin-bottom: 20px;
+}
+div.space-small {
+    margin-bottom: 5px;
+}
+div.page-title {
+    font-family: "Lucida Grande", Verdana;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center!important;
+    letter-spacing: 0.3em;
+}
+div.section {
+}
+div.section-title {
+    background-color: #729dad;
+    
+    margin: 0;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+
+    font-family: Verdana, Tahoma, Serif;
+    color: white;
+    font-size: 12px;
+    padding: 1px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+div.section-subtitle {
+    padding-bottom: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+div.section-nested {
+    padding: 15px;
+}
+img.fade {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+img.fade:hover {
+    opacity:1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+/* Text styles */
+span.mono {
+    font-family: monospace;
+}
+span.blue {
+    color: #2580a2;
+}
+span.gray {
+    color: #666;
+}
+
+/* Generals */
+pre {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+fieldset {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border: 1px solid #ccc;
+    /*padding: 20px;*/
+    background-color: #f7f7f7;
+}
+legend {
+    margin-left: 15px;
+    font-family: Verdana, Tahoma, Serif;
+    font-size: 12px;
+    color: #222;
+}
+
+/* Tables */
+table {
+    font-family: Verdana, Tahoma, Serif;
+    font-size: 12px;
+    table-layout: fixed;
+}
+td {
+    word-wrap: break-word;
+}
+tr.row {
+}
+tr.alternate {
+    background: #eee;
+}
+tr.alternate-light {
+    background: #f7f7f7;
+}
+td.title {
+    padding: 5px;
+    font-weight: bold;
+    background: #ccdddd;
+    font-size: 12px;
+}
+td.title:first-child {
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+td.title:last-child {
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+td.row {
+    padding: 5px;
+    font-size: 11px;
+}
+td.form {
+   padding-bottom: 6px;
+}
+
+</style>
+<script type="text/JavaScript">
+function showHide(id) {
+    var e = document.getElementById(id);
+    
+    if(e.style.display == "none")
+        e.style.display = "block";
+    else
+        e.style.display = "none";
+}
+</script>
+</head>
+<body>
+<tag id="top"></tag>
+<div id="container">
+    <div id="header">
+</div>
+    <div id="menu">
+        <ul id="menu">
+         {% if results.InetSourceAnalysis %}
+            <li style="margin-right: 20px;"><a href="#network_analysis">Network Analysis</a></li>
+         {% endif %}
+            <li><a href="#static_analysis">Static Analysis</a></li>
+            <li><a href="#antivirus">Antivirus</a></li>
+            <li><a href="#source_information">Source Information</a></li>
+            <li><a href="#OwnLocation">Own Location</a></li>
+            <li><a href="#file_information">File Information</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <tag id="file_information"><div class="section">
+    <div class="section-title">File Information</div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+ {% if results.Info %}       
+        <tr>
+            <td><strong>Ragpicker-Version</strong>:</td>
+            <td><span class="mono">v{{results.Info.analyse.ragpicker_version}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Analysis Started</strong>:</td>
+            <td><span class="mono">{{results.Info.analyse.started}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Scoring</strong>:</td>
+            <td><span class="mono"><strong>{{results.score}}</strong></span></td>
+        </tr>        
+        <tr>
+            <td><strong>File size</strong>:</td>
+            <td><span class="mono">{{results.Info.file.size}} bytes</span></td>
+        </tr>
+    {% if results.Info.file.type == 'PE32' or results.Info.file.type == 'MS-DOS' %}       
+        <tr>
+            <td><strong>EXE</strong>:</td>
+            <td><span class="mono">{{results.Info.file.EXE}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>DLL</strong>:</td>
+            <td><span class="mono">{{results.Info.file.DLL}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Driver</strong>:</td>
+            <td><span class="mono">{{results.Info.file.DRIVER}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>is Probably Packed</strong>:</td>
+            <td><span class="mono">{{results.Info.file.isProbablyPacked}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Digital Signature</strong>:</td>
+            <td><span class="mono">{{results.Info.file.digitalSignature}}</span></td>
+        </tr>
+{% endif %}
+        <tr>
+            <td><strong>File type</strong>:</td>
+            <td><span class="mono">{{results.Info.file.type}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>MD5</strong>:</td>
+            <td><span class="mono">{{results.Info.file.md5}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>SHA1</strong>:</td>
+            <td><span class="mono">{{results.Info.file.sha1}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>SHA256</strong>:</td>
+            <td><span class="mono">{{results.Info.file.sha256}}</span></td>
+        </tr>
+{% endif %}
+{% if results.PEID %}
+    {% for PEID in results.PEID %}
+        <tr>
+            <td><strong>PEiD Signature</strong>:</td>
+            <td>{{PEID}}</td>
+        </tr>
+    {% endfor %}
+{% endif %}
+{% if results.AntiDBG %}
+        <tr>
+            <td><strong>Anti Debug</strong>:</td>
+            <td><span class="mono">{{results.AntiDBG.Anti_Debug}}</span></td>
+        </tr>
+{% endif %}
+{% if results.AntiVM %}
+    {% for AntiVM in results.AntiVM %}
+        <tr>
+            <td><strong>Anti VM Trick</strong>:</td>
+            <td><span class="mono">{{ AntiVM}}</span></td>
+        </tr>
+    {% endfor %}
+{% endif %}
+    </tbody></table>
+    
+{% if results.VerifySigs %}   
+   <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+    <tag id="verify_sigs"><div class="section">
+    <div class="section-title">File-Signature</div>     
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+		{% if results.VerifySigs.ValidationError %} 
+        <tr>
+            <td><strong>Validation Error</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.ValidationError}}</span></td>
+        </tr>
+        {% else %}    
+        <tr>
+            <td><strong>Program name</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.ProgramName}}</span></td>
+        </tr>
+         <tr>
+            <td><strong>Program URL</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.ProgramURL}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Issuer</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.Issuer}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Publisher CN</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.PublisherCN}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Publisher O</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.PublisherO}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Not before</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.NotBefore}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Not after</strong>:</td>
+            <td><span class="mono">{{results.VerifySigs.NotAfter}}</span></td>
+        </tr>
+        {% endif %}    
+    </tbody></table>
+{% endif %}    
+    
+{% if results.OwnLocation %}  
+   <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+    <tag id="own_location"><div class="section">
+    <div class="section-title">Own Location</div>   
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td><strong>IP-Address</strong>:</td>
+            <td><span class="mono">{{results.OwnLocation.ipaddress}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Country</strong>:</td>
+            <td><span class="mono">{{results.OwnLocation.country}}</span></td>
+        </tr>
+    </tbody></table>
+{% endif %}
+   <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+    <tag id="source_information"><div class="section">
+    <div class="section-title">Source Information</div>
+{% if results.Info %}     
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td><strong>URL</strong>:</td>
+            <td><span class="mono">{{results.Info.url.url}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Hostname</strong>:</td>
+            <td><span class="mono">{{results.Info.url.hostname}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Protokoll</strong>:</td>
+            <td><span class="mono">{{results.Info.url.protocol}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Port</strong>:</td>
+            <td><span class="mono">{{results.Info.url.port}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>MD5-URL</strong>:</td>
+            <td><span class="mono">{{results.Info.url.md5}}</span></td>
+        </tr>
+    </tbody></table>
+{% endif %}
+   <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+    <tag id="antivirus"><div class="section">
+    <div class="section-title">Antivirus</div>
+{% if results.VirusTotal %}
+        <fieldset>
+            <legend>Virustotal</legend>
+            <div id="virustotal" class="section-nested" style="display: block; ">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Virustotal</td>
+                    </tr>
+                    <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+    {% if results.VirusTotal.file.verbose_msg %}
+                            <tr>
+                                <td><strong>Message</strong>:</td>
+                                <td><span class="mono">{{results.VirusTotal.file.verbose_msg}}</span></td>
+                            </tr>
+    {% else %}
+                            <tr>
+                                <td><strong>Scandate</strong>:</td>
+                                <td><span class="mono">{{results.VirusTotal.file.scan_date}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>First submission</strong>:</td>
+                                <td><span class="mono">{{results.VirusTotal.file.first_submission}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detection rate</strong>:</td>
+                                <td><span class="mono">{{results.VirusTotal.file.positives}}/{{results.VirusTotal.file.total}}</span></td>
+                            </tr>
+    {% endif %}
+                        </tbody>
+                        </table>
+                    </tr>
+                </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+        <div class="space-small"></div>
+        <fieldset>
+            <legend>AV-Scan</legend>
+            <div id="dns" class="section-nested" style="display: block; ">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Antivirus</td>
+                        <td class="title">Result</td>
+                    </tr>
+{% if results.AntivirusScanAvg %}
+                    <tr class="row">
+                        <td class="row"><span class="mono">AVG</span></td>
+                        <td class="row"><span class="mono">{{results.AntivirusScanAvg.Avg}}</span></td>
+                    </tr>
+{% endif %}
+{% if results.AntivirusScanAvira %}
+                    <tr class="alternate">
+                        <td class="row"><span class="mono">Avira</span></td>
+                        {% if results.AntivirusScanAvira.Avira.url %}
+                            <td class="row"><span class="mono"><a href="{{results.AntivirusScanAvira.Avira.url}}"  target="_blank">{{results.AntivirusScanAvira.Avira.scan}}</a></span></td>                    
+                        {% else %}
+                            <td class="row"><span class="mono">{{results.AntivirusScanAvira.Avira.scan}}</span></td>
+                        {% endif %}
+                    </tr>
+{% endif %}
+{% if results.AntivirusScanBitDefender %}
+                    <tr class="row">
+                        <td class="row"><span class="mono">BitDefender</span></td>
+                        <td class="row"><span class="mono">{{results.AntivirusScanBitDefender.BitDefender}}</span></td>
+                    </tr>
+{% endif %}
+{% if results.AntivirusScanClamAv %}
+                    <tr class="alternate">
+                        <td class="row"><span class="mono">ClamAv</span></td>
+                        <td class="row"><span class="mono">{{results.AntivirusScanClamAv.ClamAv}}</span></td>
+                    </tr>
+{% endif %}
+{% if results.AntivirusScanFProt %}
+                    <tr class="row">
+                        <td class="row"><span class="mono">F-Prot</span></td>
+                        <td class="row"><span class="mono">{{results.AntivirusScanFProt.FProt}}</span></td>
+                    </tr>
+{% endif %}
+                </tbody></table>
+            </div>
+        </fieldset>
+        <div class="space-small"></div>
+    <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+</div>
+    <tag id="static_analysis"><div class="section">
+    <div class="section-title">Static Analysis</div>
+{% if results.PDFID %}
+<fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALLSURBVDjLpZPfT1JhGMfprnnd39B1986rtja3TEWGBJocEYbya+oBzgJRt8xwKjoCf1SgqKSiGUqlYiZzGpY6XebMXFOxocIFK8p1c76d8zpXq9lNF8/27H2f7+f5Pu8PAQDB/8RfC2/u1WVErHTmS1oniyko7Bfmk4iVlmCG1t6KWOhMvuZcwCpTHU0a9EioVTjiRCmGQYqmSZ7QlCNZacCyuSp6LuCjVMR+sVpx4uzAkboMMYmQBJ/za/zeB3EOGzbqLhNAndeWYXRVZxocWpl5UI9d4XWkfT4ktRU45kbgRWewY5UScaqIGykXHOAKAdz2GKMNIStsYyYwAQP2RDfwIxjCN7cLiQoVsZys0uNzkZSI+VH2Jfm/AJqeMtYxfRe+xS5YR2lC5wFpdwfSTidSLc04lBcR8SFVfAr43YHSW4zZzSk4phvBjFRi52YB6Zx2d+JreztSTXbES2REyAMOuO5bomzWZHNfNTf7MwTqHjmWPi1gaiOE4aV+dAfqMa+jsCvJIzfBu+DP4kAmwY4wG7MKOWrtflR2R6BpGIgKyntLsbA9h4m1UQRXA/BHPTAN62CzuBClpNwN5GFXnItoiQR3mDao2sJwTKzD4ltELjPECjReBTu2MoSRZT+GlnzwLnSBHtIg1/oET6M7qPe+grJlkoj44AHq9hnIm15AaAtCUOXQZ2nd6ri2T4WuOSf6X3vIWeTbxjCzFkNgfhueyXeo6XsNQ2cERfbnRFzaOg1RXfD08ZycnFwwtOkUSheVrvApUN5LEfrkyh4G5rbwmItH0xuQN08SMcU54gHEwZ8vUd+qvaR3aC+Ka0dZb/g9POFNPOQc3OfsF9tPO/MAcf04coyD7Lm/TGXtyJJZeuISrtAeeAtXaB2K1jCkjc+QYw5AbHyQoEzOa//8qvxo6pruskKmNy2uG+csj6HA2PtdbnZVn9X8BLLktmdBdpY6AAAAAElFTkSuQmCC" alt="" border="0">
+PDFID <a href="javascript:showHide('pdfid');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+           <div id="pdfid" class="section-nested" style="display: block; ">
+                
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <colgroup>
+                    <col width="150">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                {% if results.PDFID.errorOccured == 'True' %}
+                <tr>
+                    <td><strong>Error</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.errorMessage}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.isPdf %}
+                <tr>
+                    <td><strong>isPdf</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.isPdf}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.header %}
+                <tr>
+                    <td><strong>Header</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.header}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.countEof %}
+                <tr>
+                    <td><strong>Count EOF</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.countEof}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.countChatAfterLastEof %}
+                <tr>
+                    <td><strong>Count Chat After Last EOF</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.countChatAfterLastEof}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.streamEntropy %}
+                <tr>
+                    <td><strong>Stream Entropy</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.streamEntropy}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.nonStreamEntropy %}
+                <tr>
+                    <td><strong>Non-Stream Entropy</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.nonStreamEntropy}}</span></td>
+                </tr>
+                {% endif %}
+                {% if results.PDFID.totalEntropy %}
+                <tr>
+                    <td><strong>Total Entropy</strong>:</td>
+                    <td><span class="mono">{{results.PDFID.totalEntropy}}</span></td>
+                </tr>
+                {% endif %}
+            </tbody></table>
+  <div class="space-small"></div>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Name</td>
+                        <td class="title">Count</td>
+                        <td class="title">HexCodeCount</td>
+                    </tr>
+                    {% if results.PDFID.keywords %}
+                        {% for keyword in results.PDFID.keywords %}
+                        <tr class={{ loop.cycle('alternate', 'row') }}>
+                            <td class="row">{{keyword.name}}</td>
+                            <td class="row">{{keyword.count}}</td>
+                            <td class="row">{{keyword.hexcodecount}}</td>
+                        </tr>
+                        {% endfor%}
+                    {% endif %}
+                    </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+{% if results.CheckEP or results.PEChecksum or results.CheckTLS or results.PETimestamp %} 
+{% if results.PETimestamp %} 
+        <fieldset>
+            <legend>PE-TimeDateStamp</legend>
+            <div id="CheckEP" class="section-nested" style="display: block; ">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td><strong>TimeDateStamp</strong>:</td>
+            <td><span class="mono">{{results.PETimestamp}}</span></td>
+        </tr>
+    </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+{% if results.CheckEP %}     
+        <fieldset>
+            <legend>Entry Point (EP)</legend>
+            <div id="CheckEP" class="section-nested" style="display: block; ">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td><strong>EP-Address</strong>:</td>
+            <td><span class="mono">{{results.CheckEP.EP}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Name</strong>:</td>
+            <td><span class="mono">{{results.CheckEP.Name}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Pos/Sections</strong>:</td>
+            <td><span class="mono">{{results.CheckEP.posVsSections}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Suspicious</strong>:</td>
+            <td><span class="mono">{{results.CheckEP.Suspicious}}</span></td>
+        </tr>
+    </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+{% if results.PEChecksum %}     
+        <fieldset>
+            <legend>PE-File Checksum</legend>
+            <div id="CheckEP" class="section-nested" style="display: block; ">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td><strong>CRC-Claimed</strong>:</td>
+            <td><span class="mono">{{results.PEChecksum.Claimed}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>CRC-Actual</strong>:</td>
+            <td><span class="mono">{{results.PEChecksum.Actual}}</span></td>
+        </tr>
+        <tr>
+            <td><strong>Suspicious</strong>:</td>
+            <td><span class="mono">{{results.PEChecksum.Suspicious}}</span></td>
+        </tr>
+    </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+{% if results.CheckTLS  %}
+        <fieldset>
+            <legend>Thread Local Storage (TLS)</legend>
+            <div id="CheckTLS" class="section-nested" style="display: block; ">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <colgroup>
+            <col width="150">
+            <col width="*">
+        </colgroup>
+        <tbody>
+	{% for tls in results.CheckTLS %}        
+       <tr>
+            <td><strong>TLS-Adress</strong>:</td>
+            <td><span class="mono">{{tls}}</span></td>
+       </tr>
+	{% endfor%}	       
+    </tbody></table>
+            </div>
+        </fieldset>
+{% endif %} 
+{% endif %}
+
+{% if results.SubFile %}
+    <fieldset>
+	<legend>Subfile</legend>
+        <div id="Subfile" class="section-nested" style="display: block; ">
+	  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	      <colgroup>
+		  <col width="150">
+		  <col width="*">
+	      </colgroup>
+	      <tbody>
+	      {% if results.SubFile.Errors %}
+			{% for errors in results.SubFile.Errors %}        
+			<tr>
+			    <td><strong>Error:</strong></td>
+			    <td>{{errors}}</td>
+			</tr>
+			{% endfor%}	
+	      {% endif %}
+	      {% if results.SubFile.Files %}
+			{% for file in results.SubFile.Files %}        
+			<tr>
+			    <td><strong>{{ file.FileType }}:</strong></td>
+			    <td><span class="mono">{{ file.Desc }}</span></td>
+			</tr>
+			{% endfor%}	
+	      {% endif %}
+	      </tbody>
+	  </table>
+	</div>
+    </fieldset>
+{% endif %}
+
+{% if results.SectionInformations %}
+ <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALLSURBVDjLpZPfT1JhGMfprnnd39B1986rtja3TEWGBJocEYbya+oBzgJRt8xwKjoCf1SgqKSiGUqlYiZzGpY6XebMXFOxocIFK8p1c76d8zpXq9lNF8/27H2f7+f5Pu8PAQDB/8RfC2/u1WVErHTmS1oniyko7Bfmk4iVlmCG1t6KWOhMvuZcwCpTHU0a9EioVTjiRCmGQYqmSZ7QlCNZacCyuSp6LuCjVMR+sVpx4uzAkboMMYmQBJ/za/zeB3EOGzbqLhNAndeWYXRVZxocWpl5UI9d4XWkfT4ktRU45kbgRWewY5UScaqIGykXHOAKAdz2GKMNIStsYyYwAQP2RDfwIxjCN7cLiQoVsZys0uNzkZSI+VH2Jfm/AJqeMtYxfRe+xS5YR2lC5wFpdwfSTidSLc04lBcR8SFVfAr43YHSW4zZzSk4phvBjFRi52YB6Zx2d+JreztSTXbES2REyAMOuO5bomzWZHNfNTf7MwTqHjmWPi1gaiOE4aV+dAfqMa+jsCvJIzfBu+DP4kAmwY4wG7MKOWrtflR2R6BpGIgKyntLsbA9h4m1UQRXA/BHPTAN62CzuBClpNwN5GFXnItoiQR3mDao2sJwTKzD4ltELjPECjReBTu2MoSRZT+GlnzwLnSBHtIg1/oET6M7qPe+grJlkoj44AHq9hnIm15AaAtCUOXQZ2nd6ri2T4WuOSf6X3vIWeTbxjCzFkNgfhueyXeo6XsNQ2cERfbnRFzaOg1RXfD08ZycnFwwtOkUSheVrvApUN5LEfrkyh4G5rbwmItH0xuQN08SMcU54gHEwZ8vUd+qvaR3aC+Ka0dZb/g9POFNPOQc3OfsF9tPO/MAcf04coyD7Lm/TGXtyJJZeuISrtAeeAtXaB2K1jCkjc+QYw5AbHyQoEzOa//8qvxo6pruskKmNy2uG+csj6HA2PtdbnZVn9X8BLLktmdBdpY6AAAAAElFTkSuQmCC" alt="" border="0">
+{{results.SectionInformations.NumberOfSections}} - Sections <a href="javascript:showHide('pe_sections');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="pe_sections" class="section-nested" style="display: block; ">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Name</td>
+                        <td class="title">Virtual Address</td>
+                        <td class="title">Virtual Size</td>
+                        <td class="title">Size of Raw Data</td>
+                        <td class="title">Entropy</td>
+                    </tr>
+{% for section in results.SectionInformations.Sections %}
+                    <tr class={{ loop.cycle('alternate', 'row') }}>
+                        <td class="row">{{section.name}}</td>
+                        <td class="row">{{section.virtualAddress}}</td>
+                        <td class="row">{{section.virtualSize}}</td>
+                        <td class="row">{{section.sizeOfRawData}}</td>
+                        <td class="row">{{section.entropy}}</td>
+                    </tr>
+{% endfor%}	
+                </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+<div class="space-small"></div>
+{% if results.CheckRSRC %}
+ <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALLSURBVDjLpZPfT1JhGMfprnnd39B1986rtja3TEWGBJocEYbya+oBzgJRt8xwKjoCf1SgqKSiGUqlYiZzGpY6XebMXFOxocIFK8p1c76d8zpXq9lNF8/27H2f7+f5Pu8PAQDB/8RfC2/u1WVErHTmS1oniyko7Bfmk4iVlmCG1t6KWOhMvuZcwCpTHU0a9EioVTjiRCmGQYqmSZ7QlCNZacCyuSp6LuCjVMR+sVpx4uzAkboMMYmQBJ/za/zeB3EOGzbqLhNAndeWYXRVZxocWpl5UI9d4XWkfT4ktRU45kbgRWewY5UScaqIGykXHOAKAdz2GKMNIStsYyYwAQP2RDfwIxjCN7cLiQoVsZys0uNzkZSI+VH2Jfm/AJqeMtYxfRe+xS5YR2lC5wFpdwfSTidSLc04lBcR8SFVfAr43YHSW4zZzSk4phvBjFRi52YB6Zx2d+JreztSTXbES2REyAMOuO5bomzWZHNfNTf7MwTqHjmWPi1gaiOE4aV+dAfqMa+jsCvJIzfBu+DP4kAmwY4wG7MKOWrtflR2R6BpGIgKyntLsbA9h4m1UQRXA/BHPTAN62CzuBClpNwN5GFXnItoiQR3mDao2sJwTKzD4ltELjPECjReBTu2MoSRZT+GlnzwLnSBHtIg1/oET6M7qPe+grJlkoj44AHq9hnIm15AaAtCUOXQZ2nd6ri2T4WuOSf6X3vIWeTbxjCzFkNgfhueyXeo6XsNQ2cERfbnRFzaOg1RXfD08ZycnFwwtOkUSheVrvApUN5LEfrkyh4G5rbwmItH0xuQN08SMcU54gHEwZ8vUd+qvaR3aC+Ka0dZb/g9POFNPOQc3OfsF9tPO/MAcf04coyD7Lm/TGXtyJJZeuISrtAeeAtXaB2K1jCkjc+QYw5AbHyQoEzOa//8qvxo6pruskKmNy2uG+csj6HA2PtdbnZVn9X8BLLktmdBdpY6AAAAAElFTkSuQmCC" alt="" border="0">
+.rsrc Section <a href="javascript:showHide('rsrc');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="rsrc" class="section-nested" style="display: none; ">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Name</td>
+                        <td class="title">RVA</td>
+                        <td class="title">Size</td>
+                        <td class="title">Lang</td>
+                        <td class="title">Sublang</td>
+                        <td class="title">Type</td>
+                    </tr>
+{% for rsrc in results.CheckRSRC %}
+                    <tr class={{ loop.cycle('alternate', 'row') }}>
+                        <td class="row">{{rsrc.name}}</td>
+                        <td class="row">{{rsrc.RVA}}</td>
+                        <td class="row">{{rsrc.Size}}</td>
+                        <td class="row">{{rsrc.Lang}}</td>
+                        <td class="row">{{rsrc.Sublang}}</td>
+                        <td class="row">{{rsrc.Type}}</td>
+                    </tr>
+{% endfor%}	
+                </tbody></table>
+            </div>
+        </fieldset>
+{% endif %}
+ <div class="space-small"></div>
+ {% if results.Imports %}
+        <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFWSURBVBgZBcE/SFQBAAfg792dppJeEhjZn80MChpqdQ2iscmlscGi1nBPaGkviKKhONSpvSGHcCrBiDDjEhOC0I68sjvf+/V9RQCsLHRu7k0yvtN8MTMPICJieaLVS5IkafVeTkZEFLGy0JndO6vWNGVafPJVh2p8q/lqZl60DpIkaWcpa1nLYtpJkqR1EPVLz+pX4rj47FDbD2NKJ1U+6jTeTRdL/YuNrkLdhhuAZVP6ukqbh7V0TzmtadSEDZXKhhMG7ekZl24jGDLgtwEd6+jbdWAAEY0gKsPO+KPy01+jGgqlUjTK4ZroK/UVKoeOgJ5CpRyq5e2qjhF1laAS8c+Ymk1ZrVXXt2+9+fJBYUwDpZ4RR7Wtf9u9m2tF8Hwi9zJ3/tg5pW2FHVv7eZJHd75TBPD0QuYze7n4Zdv+ch7cfg8UAcDjq7mfwTycew1AEQAAAMB/0x+5JQ3zQMYAAAAASUVORK5CYII=" alt="" border="0">
+ Imports <a href="javascript:showHide('pe_imports');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="pe_imports" class="section-nested" style="display: none; ">
+            {% for dll in results.Imports %}
+                <div><strong>Library <span class="blue">{{dll.name}}</span></strong>:</div>
+                {% for import in dll.imports %}
+                    <div><span class="mono">{{import}}</span></div>
+                {% endfor%}	
+                <div class="space"></div>
+            {% endfor%}	
+            </div>
+            </fieldset>
+{% endif %}
+  <div class="space-small"></div>
+   {% if results.SuspiciousApiFunctions %}
+            <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFWSURBVBgZBcE/SFQBAAfg792dppJeEhjZn80MChpqdQ2iscmlscGi1nBPaGkviKKhONSpvSGHcCrBiDDjEhOC0I68sjvf+/V9RQCsLHRu7k0yvtN8MTMPICJieaLVS5IkafVeTkZEFLGy0JndO6vWNGVafPJVh2p8q/lqZl60DpIkaWcpa1nLYtpJkqR1EPVLz+pX4rj47FDbD2NKJ1U+6jTeTRdL/YuNrkLdhhuAZVP6ukqbh7V0TzmtadSEDZXKhhMG7ekZl24jGDLgtwEd6+jbdWAAEY0gKsPO+KPy01+jGgqlUjTK4ZroK/UVKoeOgJ5CpRyq5e2qjhF1laAS8c+Ymk1ZrVXXt2+9+fJBYUwDpZ4RR7Wtf9u9m2tF8Hwi9zJ3/tg5pW2FHVv7eZJHd75TBPD0QuYze7n4Zdv+ch7cfg8UAcDjq7mfwTycew1AEQAAAMB/0x+5JQ3zQMYAAAAASUVORK5CYII=" alt="" border="0">
+ Suspicious Api-Functions <a href="javascript:showHide('SuspiciousApiFunctions');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="SuspiciousApiFunctions" class="section-nested" style="display: none; ">
+            {% for function in results.SuspiciousApiFunctions %}
+                <div><span class="mono">{{function}}</span></div>
+            {% endfor%}	
+                <div class="space"></div>
+            </div>
+             </fieldset>
+{% endif %}
+  <div class="space-small"></div>
+{% if results.AntiDBG %}
+            <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFWSURBVBgZBcE/SFQBAAfg792dppJeEhjZn80MChpqdQ2iscmlscGi1nBPaGkviKKhONSpvSGHcCrBiDDjEhOC0I68sjvf+/V9RQCsLHRu7k0yvtN8MTMPICJieaLVS5IkafVeTkZEFLGy0JndO6vWNGVafPJVh2p8q/lqZl60DpIkaWcpa1nLYtpJkqR1EPVLz+pX4rj47FDbD2NKJ1U+6jTeTRdL/YuNrkLdhhuAZVP6ukqbh7V0TzmtadSEDZXKhhMG7ekZl24jGDLgtwEd6+jbdWAAEY0gKsPO+KPy01+jGgqlUjTK4ZroK/UVKoeOgJ5CpRyq5e2qjhF1laAS8c+Ymk1ZrVXXt2+9+fJBYUwDpZ4RR7Wtf9u9m2tF8Hwi9zJ3/tg5pW2FHVv7eZJHd75TBPD0QuYze7n4Zdv+ch7cfg8UAcDjq7mfwTycew1AEQAAAMB/0x+5JQ3zQMYAAAAASUVORK5CYII=" alt="" border="0">
+ API Anti Debug <a href="javascript:showHide('AntiDBG');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="AntiDBG" class="section-nested" style="display: none; ">
+            {% for function in results.AntiDBG.API_Anti_Debug %}
+                <div><span class="mono">{{function}}</span></div>
+            {% endfor%}	
+                <div class="space"></div>
+            </div>
+             </fieldset>
+{% endif %}
+        <div class="space-small"></div>
+    <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+</div>
+{% if results.InetSourceAnalysis %}
+    <tag id="network_analysis"><div class="section">
+    <div class="section-title">Network Analysis</div>
+        <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMtSURBVDjLVZNLa1xlAIafc5szk8xkMkkm5MKY2EpT2qa2MTVCmoLS2gq6EKooimAW7iQb/0I2bgTRIog0oFW7KQpCS7VqrSmmJGlSQtswqWlLLmbGmcmcZM6cy/edz00r6bt8eXh4N6+mlGJnxiZHR4APgSNAFjCBKjClInXm05Gzl3by2mPB2OSoCUwAp1/LHbcziSyO24gbgJAegg2urF8UUsifhZBvfvXK99v/C8YmRy3gt8G2/cMv517E8Wx8ApYcjZiyKbkRSgQkcFn3rzG9Nn1LhOLYt2/8UNUfLZkYaN0zfLRrkLIMCHUNIXTqIoZLjLJvU/ASrFQtnko+z2BH38HAD78DMConHh4FPn5nz6vGgqyxTp16JNj2kpR9C8eD/OoW1VoNO1NCS+d5oW0vV27f2PX11MS8MTR6+JOTXUMHNCPBui5AtdMpk8xsGNQ9ndur20TxCnbPIn5TnmJUwaxIDrTm9Jn7d1tM4EiuqZs5d41iXGefsZsIwYNCgOfVSXconJbLLEWb4CuahU2+6HO8d4DQF/0m0NpgNvLAXaPgu6QadrEZpKhUItJZj/aMS1EewvHnsdUWW/+WKG82kEykCAPRbCqlNE1B4DsocpiW5OJfIVoiyfqSQFdNdGXrpLZGcFZDPKYJg2VQCiGEZkoRlZ3A6W41mknFn2WlaOKFFrG4Tbw9wb2/S3g3miHySLdbNDd2kzYKVGpVpIiqugjF7P3yQ55pyLFWmCSyVokZPqHnEoYmsWQGuyWOGdexNIkRFOnqbGN5bRngjh4G4rMLd6+KnmQW012lWrpOJuNjCh9LU9i6gRkEZHIrpNv/QK8vcijXz5lfLijgS+PmuYV75+fPDXr1Wt9znfsouy5x+2miuoltW1iawBJV0o0/wT8lBvbv5WZ+gaWNlasz43MfmQChH777e37uT78eHDx5+BiLBROjqhDaFmGkQ1KS6+mlr7+XX2evc+nWVB54+4kznfr8pZQIxXkRyhPvDb9vIjtQqgFN12hLO2yUZ/ni8o8SuAa8NTM+t/GE4HGGx4del0J+IGXUH8ko86iuAneAszPjc9/s5P8DuO6ZcsXuRqAAAAAASUVORK5CYII=" alt="" border="0">
+ URL <a href="javascript:showHide('url');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a>
+        </legend>
+            <div id="url" class="section-nested" style="display: block; ">
+            {% if results.InetSourceAnalysis.FortiGuard %}    
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">FortiGuard</td>
+                    </tr>
+                   <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody><tr>
+                                <td><strong>Result</strong>:</td>
+                                <td><span class="mono">{{results.InetSourceAnalysis.FortiGuard }}</span></td>
+                            </tr>
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+                {% endif %}
+                {% if results.InetSourceAnalysis.URLVoid %}    
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">URLVoid: {{results.InetSourceAnalysis.URLVoid.url }}</td>
+                    </tr>
+                    <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                    {% for urlResult in results.InetSourceAnalysis.URLVoid.urlResult %}
+                            {% if urlResult.IP %}
+                                <tr>
+                                <td><strong>IP</strong>:</td>
+                                    <td><span class="mono">{{urlResult.IP}}</span></td>
+                                </tr>
+                            {% endif %}
+                            {% if urlResult.CountryCode %}
+                                <tr>
+                                    <td><strong>Country Code</strong>:</td>
+                                    <td><span class="mono">{{urlResult.CountryCode}}</span></td>
+                                </tr>
+                            {% endif %}
+                            {% if urlResult.HTTPResponseCode %}
+                                <tr>
+                                    <td><strong>HTTP-Response Code</strong>:</td>
+                                    <td><span class="mono">{{urlResult.HTTPResponseCode}}</span></td>
+                                </tr>
+                            {% endif %}
+                            {% if urlResult.WebsiteStatus %}
+                                <tr>
+                                    <td><strong>Website Status</strong>:</td>
+                                    <td><span class="mono">{{urlResult.WebsiteStatus}}</span></td>
+                                </tr>
+                            {% endif %}
+                            {% if urlResult.Blacklist %}
+                                <tr>
+                                    <td><strong>Blacklist</strong>:</td>
+                                    <td><span class="mono">{{urlResult.Blacklist}}</span></td>
+                                </tr>
+                             {% endif %}  
+                        {% endfor%}	
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="space-small"></div>
+        <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMtSURBVDjLVZNLa1xlAIafc5szk8xkMkkm5MKY2EpT2qa2MTVCmoLS2gq6EKooimAW7iQb/0I2bgTRIog0oFW7KQpCS7VqrSmmJGlSQtswqWlLLmbGmcmcZM6cy/edz00r6bt8eXh4N6+mlGJnxiZHR4APgSNAFjCBKjClInXm05Gzl3by2mPB2OSoCUwAp1/LHbcziSyO24gbgJAegg2urF8UUsifhZBvfvXK99v/C8YmRy3gt8G2/cMv517E8Wx8ApYcjZiyKbkRSgQkcFn3rzG9Nn1LhOLYt2/8UNUfLZkYaN0zfLRrkLIMCHUNIXTqIoZLjLJvU/ASrFQtnko+z2BH38HAD78DMConHh4FPn5nz6vGgqyxTp16JNj2kpR9C8eD/OoW1VoNO1NCS+d5oW0vV27f2PX11MS8MTR6+JOTXUMHNCPBui5AtdMpk8xsGNQ9ndur20TxCnbPIn5TnmJUwaxIDrTm9Jn7d1tM4EiuqZs5d41iXGefsZsIwYNCgOfVSXconJbLLEWb4CuahU2+6HO8d4DQF/0m0NpgNvLAXaPgu6QadrEZpKhUItJZj/aMS1EewvHnsdUWW/+WKG82kEykCAPRbCqlNE1B4DsocpiW5OJfIVoiyfqSQFdNdGXrpLZGcFZDPKYJg2VQCiGEZkoRlZ3A6W41mknFn2WlaOKFFrG4Tbw9wb2/S3g3miHySLdbNDd2kzYKVGpVpIiqugjF7P3yQ55pyLFWmCSyVokZPqHnEoYmsWQGuyWOGdexNIkRFOnqbGN5bRngjh4G4rMLd6+KnmQW012lWrpOJuNjCh9LU9i6gRkEZHIrpNv/QK8vcijXz5lfLijgS+PmuYV75+fPDXr1Wt9znfsouy5x+2miuoltW1iawBJV0o0/wT8lBvbv5WZ+gaWNlasz43MfmQChH777e37uT78eHDx5+BiLBROjqhDaFmGkQ1KS6+mlr7+XX2evc+nWVB54+4kznfr8pZQIxXkRyhPvDb9vIjtQqgFN12hLO2yUZ/ni8o8SuAa8NTM+t/GE4HGGx4del0J+IGXUH8ko86iuAneAszPjc9/s5P8DuO6ZcsXuRqAAAAAASUVORK5CYII=" alt="" border="0">
+ IP <a href="javascript:showHide('ip');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a></legend>
+            <div id="ip" class="section-nested" style="display: block; ">
+        {% if results.InetSourceAnalysis.IPVoid %}
+                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">IPVoid: {{results.InetSourceAnalysis.IPVoid.ip }}</td>
+                    </tr>
+                   <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                {% for ipResult in results.InetSourceAnalysis.IPVoid.ipResult %}
+                            {% if ipResult.BlacklistStatus %}
+                                <tr>
+                                    <td><strong>BlacklistStatus</strong>:</td>
+                                    <td><span class="mono">{{ipResult.BlacklistStatus}}</span></td>
+                                </tr>
+                            {% endif %}  
+                            {% if ipResult.Blacklist %}
+                                <tr>
+                                    <td><strong>Blacklist</strong>:</td>
+                                    <td><span class="mono">{{ipResult.Blacklist}}</span></td>
+                                </tr>
+                            {% endif %}  
+                           {% if ipResult.ISP %}
+                                <tr>
+                                    <td><strong>ISP</strong>:</td>
+                                    <td><span class="mono">{{ipResult.ISP}}</span></td>
+                                </tr>
+                            {% endif %}  
+                           {% if ipResult.GEOLocation %}
+                                <tr>
+                                    <td><strong>GEO-Location</strong>:</td>
+                                    <td><span class="mono">{{ipResult.GEOLocation}}</span></td>
+                                </tr>
+                            {% endif %}  
+                {% endfor%}	
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+        {% endif %}
+        {% if results.InetSourceAnalysis.Alienvault %}
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Alienvault</td>
+                    </tr>
+                   <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody><tr>
+                                <td><strong>Result</strong>:</td>
+                                <td><span class="mono">{{results.InetSourceAnalysis.Alienvault}}</span></td>
+                            </tr>
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+        {% endif %}
+        {% if results.InetSourceAnalysis.Robtex %}
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Robtex: {{results.InetSourceAnalysis.Robtex.ip }}</td>
+                    </tr>
+                   <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                            {% for ipResult in results.InetSourceAnalysis.Robtex.ipResult %}
+                                <tr>
+                                    <td><strong>ARecord</strong>:</td>
+                                    <td><span class="mono">{{ipResult.ARecord}}</span></td>
+                                </tr>
+                            {% endfor%}	
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+            {% endif %}
+            </div>
+        </fieldset>
+        <div class="space-small"></div>
+{% if results.InetSourceAnalysis.URLQuery %}  
+        <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMtSURBVDjLVZNLa1xlAIafc5szk8xkMkkm5MKY2EpT2qa2MTVCmoLS2gq6EKooimAW7iQb/0I2bgTRIog0oFW7KQpCS7VqrSmmJGlSQtswqWlLLmbGmcmcZM6cy/edz00r6bt8eXh4N6+mlGJnxiZHR4APgSNAFjCBKjClInXm05Gzl3by2mPB2OSoCUwAp1/LHbcziSyO24gbgJAegg2urF8UUsifhZBvfvXK99v/C8YmRy3gt8G2/cMv517E8Wx8ApYcjZiyKbkRSgQkcFn3rzG9Nn1LhOLYt2/8UNUfLZkYaN0zfLRrkLIMCHUNIXTqIoZLjLJvU/ASrFQtnko+z2BH38HAD78DMConHh4FPn5nz6vGgqyxTp16JNj2kpR9C8eD/OoW1VoNO1NCS+d5oW0vV27f2PX11MS8MTR6+JOTXUMHNCPBui5AtdMpk8xsGNQ9ndur20TxCnbPIn5TnmJUwaxIDrTm9Jn7d1tM4EiuqZs5d41iXGefsZsIwYNCgOfVSXconJbLLEWb4CuahU2+6HO8d4DQF/0m0NpgNvLAXaPgu6QadrEZpKhUItJZj/aMS1EewvHnsdUWW/+WKG82kEykCAPRbCqlNE1B4DsocpiW5OJfIVoiyfqSQFdNdGXrpLZGcFZDPKYJg2VQCiGEZkoRlZ3A6W41mknFn2WlaOKFFrG4Tbw9wb2/S3g3miHySLdbNDd2kzYKVGpVpIiqugjF7P3yQ55pyLFWmCSyVokZPqHnEoYmsWQGuyWOGdexNIkRFOnqbGN5bRngjh4G4rMLd6+KnmQW012lWrpOJuNjCh9LU9i6gRkEZHIrpNv/QK8vcijXz5lfLijgS+PmuYV75+fPDXr1Wt9znfsouy5x+2miuoltW1iawBJV0o0/wT8lBvbv5WZ+gaWNlasz43MfmQChH777e37uT78eHDx5+BiLBROjqhDaFmGkQ1KS6+mlr7+XX2evc+nWVB54+4kznfr8pZQIxXkRyhPvDb9vIjtQqgFN12hLO2yUZ/ni8o8SuAa8NTM+t/GE4HGGx4del0J+IGXUH8ko86iuAneAszPjc9/s5P8DuO6ZcsXuRqAAAAAASUVORK5CYII=" alt="" border="0">
+ urlquery.net <a href="javascript:showHide('urlquery');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a>
+        </legend>
+            <div id="urlquery" class="section-nested" style="display: block; ">
+
+{% if results.InetSourceAnalysis.URLQuery.urlResult != 'NOT listed' %}
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="120px">
+                                <col width="80px">
+                                <col width="120px">
+                                <col width="*">
+                            </colgroup>                
+                    <tbody><tr>
+                        <td class="title">Datum</td>
+                        <td class="title">Alerts / IDS</td>
+                        <td class="title">Country</td>
+                        <td class="title">Report URL</td>
+                    </tr>
+    {% for result in results.InetSourceAnalysis.URLQuery.urlResult %}
+                    <tr class={{ loop.cycle('alternate', 'row') }}>
+                        <td class="row">{{result.datum}}</td>
+                        <td class="row">{{result.alerts_ids}}</td>
+                        <td class="row">{{result.country}}</td>
+                        <td class="row"><a title='{{result.reportUrl}}' href='{{result.report}}'  target="_blank">{{result.reportUrl}}</a></td>
+                    </tr>
+    {% endfor%}	
+                </tbody></table>
+{% else %}
+                <div><span class="mono">{{results.InetSourceAnalysis.URLQuery.url}} NOT listed</span></div>
+{% endif %}
+            </div>
+        </fieldset>
+        <div class="space-small"></div>
+{% endif %}
+{% endif %}        
+        <fieldset>
+            <legend><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMtSURBVDjLVZNLa1xlAIafc5szk8xkMkkm5MKY2EpT2qa2MTVCmoLS2gq6EKooimAW7iQb/0I2bgTRIog0oFW7KQpCS7VqrSmmJGlSQtswqWlLLmbGmcmcZM6cy/edz00r6bt8eXh4N6+mlGJnxiZHR4APgSNAFjCBKjClInXm05Gzl3by2mPB2OSoCUwAp1/LHbcziSyO24gbgJAegg2urF8UUsifhZBvfvXK99v/C8YmRy3gt8G2/cMv517E8Wx8ApYcjZiyKbkRSgQkcFn3rzG9Nn1LhOLYt2/8UNUfLZkYaN0zfLRrkLIMCHUNIXTqIoZLjLJvU/ASrFQtnko+z2BH38HAD78DMConHh4FPn5nz6vGgqyxTp16JNj2kpR9C8eD/OoW1VoNO1NCS+d5oW0vV27f2PX11MS8MTR6+JOTXUMHNCPBui5AtdMpk8xsGNQ9ndur20TxCnbPIn5TnmJUwaxIDrTm9Jn7d1tM4EiuqZs5d41iXGefsZsIwYNCgOfVSXconJbLLEWb4CuahU2+6HO8d4DQF/0m0NpgNvLAXaPgu6QadrEZpKhUItJZj/aMS1EewvHnsdUWW/+WKG82kEykCAPRbCqlNE1B4DsocpiW5OJfIVoiyfqSQFdNdGXrpLZGcFZDPKYJg2VQCiGEZkoRlZ3A6W41mknFn2WlaOKFFrG4Tbw9wb2/S3g3miHySLdbNDd2kzYKVGpVpIiqugjF7P3yQ55pyLFWmCSyVokZPqHnEoYmsWQGuyWOGdexNIkRFOnqbGN5bRngjh4G4rMLd6+KnmQW012lWrpOJuNjCh9LU9i6gRkEZHIrpNv/QK8vcijXz5lfLijgS+PmuYV75+fPDXr1Wt9znfsouy5x+2miuoltW1iawBJV0o0/wT8lBvbv5WZ+gaWNlasz43MfmQChH777e37uT78eHDx5+BiLBROjqhDaFmGkQ1KS6+mlr7+XX2evc+nWVB54+4kznfr8pZQIxXkRyhPvDb9vIjtQqgFN12hLO2yUZ/ni8o8SuAa8NTM+t/GE4HGGx4del0J+IGXUH8ko86iuAneAszPjc9/s5P8DuO6ZcsXuRqAAAAAASUVORK5CYII=" alt="" border="0">
+ Other Services <a href="javascript:showHide('other');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARBJREFUeNpi/P//PwMMdHV18QEpHgZM8K6srOwHiMEI0gBUKMbBwbH+9+/fJiwsLH/QVQPF2dnY2Hb8+PEjngUkAFR83NPTU0lRURHEZcNiA8PRo0e9Ll26tIaZi4tLEMhv9PHxYWFiYmLAhUVFRRlPnTolzAQyESjwDwgYkHFBQQEKH+ZXFiR3MmBxOwYbrAGk++fPnwxATzG0tbXBFZWXl4P8x1BVVcXw69cvVBtAAiC31tTUgPktLS1wNkgOhEEGE+2kP3/+wG348vfvXxZ0DUVFRSgaQE5mZGT8A464CRMmHAXGgbmKigozAw5w/fr1H0+ePNnGAnWj9/379xfeuXPHHpcGoP/WAW1MAwgwAHVnm1X1kmhJAAAAAElFTkSuQmCC" alt="+" align="absmiddle" border="0">
+</a>
+        </legend>
+            <div id="other" class="section-nested" style="display: block; ">
+        {% if results.MalwareLu %}
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="title">Maware.lu</td>
+                    </tr>
+                   <tr class="row">
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <colgroup>
+                                <col width="150">
+                                <col width="*">
+                            </colgroup>
+                            <tbody><tr>
+                                <td><strong>Result</strong>:</td>
+                                <td><span class="mono">{{results.MalwareLu.response_code}}</span></td>
+                            </tr>
+                        </tbody></table>
+                    </tr>
+                </tbody></table>
+        {% endif %}
+            </div>
+        </fieldset>
+        <div class="space-small"></div>
+    <div style="text-align: right;margin-top: 10px;"><a href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEGSURBVDjLpZM/LwRRFMXPspmEaGc1shHRaiXsJ5GIRixbCr6SikxIlqgJM5UohIiGdofovHf/PZVmYwZvTntPfjnn3txWCAFNNFE33L/ZKXYv+1dRgL3r7bu0PbucJp3e4GLjtsrXGq9wkA8SU7tPk87i/MwCzAyP5QNeytcnJl46XMuoNoGKDoVlTkQhJpAgmJqcBjnqkqPTXxN8qz9cD6vdHtQMxXOBt49y5XjzLB/3tau6kWewKiwoRu8jZFvn+U++GgCBlWFBQY4qr1ANcAQxgQaFjwH4TwYrQ5skYBOYKbzjiASOwCrNd2BBwZ4jAcowGJgkAuAZ2dEJhAUqij//wn/1BesSumImTttSAAAAAElFTkSuQmCC" alt="^" title="Go to the top" border="0"></a></div>
+</div>
+    <footer class="footer">
+        <p>&copy;2013 Ragpicker Developers. <a href="http://code.google.com/p/malware-crawler/">Rapicker</a></p>
+    </footer>
+</body></html>

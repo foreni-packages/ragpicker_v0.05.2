@@ -1,0 +1,9 @@
+[Core]
+Name = subFile
+Module = subFile
+   
+[Documentation]
+Description = Find subfile in any binary stream.
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

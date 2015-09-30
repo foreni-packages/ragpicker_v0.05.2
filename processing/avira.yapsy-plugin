@@ -1,0 +1,9 @@
+[Core]
+Name = avira
+Module = avira
+   
+[Documentation]
+Description = Avira AntiVirus Scan
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

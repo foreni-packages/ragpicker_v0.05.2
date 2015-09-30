@@ -1,0 +1,9 @@
+[Core]
+Name = peid
+Module = peid
+   
+[Documentation]
+Description = Packer identify 
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

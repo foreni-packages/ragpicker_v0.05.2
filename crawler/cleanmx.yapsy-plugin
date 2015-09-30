@@ -1,0 +1,9 @@
+[Core]
+Name = cleanmx
+Module = cleanmx
+   
+[Documentation]
+Description = Fetching Malware-URLs from Cleanmx RSS
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

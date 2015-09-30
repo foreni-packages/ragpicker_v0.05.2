@@ -1,0 +1,9 @@
+[Core]
+Name = checkTLS
+Module = checkTLS
+   
+[Documentation]
+Description = Thread Local Storage (TLS)
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

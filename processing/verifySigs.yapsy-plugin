@@ -1,0 +1,9 @@
+[Core]
+Name = verifySigs
+Module = verifySigs
+   
+[Documentation]
+Description = Compute hashes and validate signatures.
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

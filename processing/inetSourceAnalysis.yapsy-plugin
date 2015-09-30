@@ -1,0 +1,9 @@
+[Core]
+Name = inetSourceAnalysis
+Module = inetSourceAnalysis
+   
+[Documentation]
+Description = checking of domain names and IP addresses
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

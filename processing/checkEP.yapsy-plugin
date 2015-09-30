@@ -1,0 +1,9 @@
+[Core]
+Name = checkEP
+Module = checkEP
+   
+[Documentation]
+Description = Alert if the EP section is not in a known good section or if its in the last PE section
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

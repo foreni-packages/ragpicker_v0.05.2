@@ -1,0 +1,9 @@
+[Core]
+Name = suspiciousApiFunctions
+Module = suspiciousApiFunctions
+   
+[Documentation]
+Description = Check for Suspicious Api Functions
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 

@@ -1,0 +1,9 @@
+[Core]
+Name = zeustracker
+Module = zeustracker
+   
+[Documentation]
+Description = Fetching Malware-URLs from Zeustracker RSS
+Author = Robby Zeitfuchs
+Version = 0.1
+Website = 
